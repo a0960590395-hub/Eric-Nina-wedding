@@ -7,57 +7,70 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Noto Serif TC', serif; color: #374151; background-color: #fcfbf9; }
-        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 700; }
-        .timer-card { background: white; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 12px; }
-        .prevent-break { white-space: nowrap; display: inline-block; }
-        nav { backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.8); }
-        .hero-bg { 
-            background-image: url('https://i.postimg.cc/MGfxPW9J/LINE-ALBUM-hun-sha-260727-2.jpg'); 
-            background-size: cover; 
-            background-position: center; 
-            width: 90%;
-            height: 80vh;
-            margin: 0 auto;
-            border-radius: 2rem;
+        body { font-family: 'Noto Serif TC', serif; color: #1a2e26; background-color: #f4f6f3; }
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; }
+        
+        .nav-blur {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background-color: rgba(244, 246, 243, 0.85);
+            border-bottom: 1px solid rgba(26, 46, 38, 0.1);
         }
+        
+        .hero-section {
+            width: 100%;
+            height: 100vh;
+            background-image: url('https://i.postimg.cc/MGfxPW9J/LINE-ALBUM-hun-sha-260727-2.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(26, 46, 38, 0.3), rgba(26, 46, 38, 0.5));
+        }
+
+        .timer-card { background: white; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 8px; }
+        .prevent-break { white-space: nowrap; display: inline-block; }
     </style>
 </head>
 <body>
 
-    <nav class="fixed top-0 w-full z-50 px-6 py-4 flex justify-center items-center border-b border-gray-200/50">
-        <span class="font-bold text-[#2d4a3e] text-lg">梁期閔Eric、洪琪毓Nina</span>
+    <nav class="fixed top-0 w-full z-50 px-6 py-4 nav-blur">
+        <span class="font-bold text-[#1a2e26] text-lg tracking-wider">梁期閔Eric、洪琪毓Nina</span>
     </nav>
 
-    <header class="w-full pt-28 pb-10">
-        <div class="hero-bg relative shadow-2xl overflow-hidden flex flex-col justify-between items-center py-12 px-4 text-center text-white">
-            <div class="absolute inset-0 bg-black/10"></div>
-            <h1 class="relative z-10 text-5xl md:text-7xl font-bold tracking-tight">Together, We Climb</h1>
-            <div class="relative z-10 text-lg md:text-xl space-y-3 px-4">
+    <header class="hero-section flex items-center justify-center text-white">
+        <div class="absolute inset-0 hero-overlay"></div>
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-8">
+                Together,<br>We Climb
+            </h1>
+            <div class="text-lg md:text-2xl space-y-2 font-medium">
                 <p class="prevent-break">從相遇、同行，到攜手走向未來。</p>
-                <p class="font-bold prevent-break">每一步都因為彼此而充滿意義。</p>
-                <p class="font-bold prevent-break">誠摯邀請您，與我們一同見證人生最美好的風景。</p>
+                <p class="prevent-break font-bold">每一步都因為彼此而充滿意義。</p>
+                <p class="prevent-break font-bold">誠摯邀請您，與我們一同見證人生最美好的風景。</p>
             </div>
         </div>
     </header>
 
     <section id="info" class="py-20 px-6 max-w-4xl mx-auto">
-        <h2 class="text-3xl text-center mb-12 text-[#2d4a3e]">好久不見，距離見面還有</h2>
+        <h2 class="text-3xl text-center mb-12 text-[#1a2e26]">好久不見，距離見面還有</h2>
         <div id="timer" class="flex justify-center items-center gap-2 md:gap-4 mb-20"></div>
 
-        <div class="bg-white p-8 md:p-12 shadow-2xl rounded-2xl border border-gray-100">
-            <div class="space-y-6 text-center">
-                <h3 class="text-4xl text-[#2d4a3e]">活動資訊</h3>
+        <div class="bg-white p-8 md:p-12 shadow-xl rounded-3xl border border-[#1a2e26]/10">
+            <div class="space-y-6 text-center text-[#1a2e26]">
+                <h3 class="text-4xl">資訊詳情</h3>
                 <p class="text-lg">日期：<span class="prevent-break">2026年11月22日 (六)</span></p>
                 <p class="text-lg">時間：<span class="prevent-break">12:00 (建議 11:30 前抵達)</span></p>
                 <p class="text-lg">地點：<span class="prevent-break">台中市林皇宮2F 墨緹絲廳</span></p>
-                <p class="text-md text-gray-500"><span class="prevent-break">台中市西屯區臺灣大道三段33號</span></p>
+                <p class="text-md text-[#1a2e26]/70"><span class="prevent-break">台中市西屯區臺灣大道三段33號</span></p>
                 
-                <button onclick="document.getElementById('map').classList.toggle('hidden')" class="mt-8 px-8 py-3 bg-[#2d4a3e] text-white rounded-full hover:bg-[#3d6353] transition shadow-lg">
+                <button onclick="document.getElementById('map').classList.toggle('hidden')" class="mt-8 px-8 py-3 bg-[#1a2e26] text-white rounded-full hover:bg-[#2d4a3e] transition shadow-lg">
                     檢視交通指引
                 </button>
-                <div id="map" class="hidden mt-6">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.669811400045!2d120.6418857!3d24.1627943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d8a571f28b7%3A0x6b42b93850117173!2z5Y-w5Lit5biC5p2-55qH5a6_!5e0!3m2!1szh-TW!2stw!4v1722086600000!5m2!1szh-TW!2stw" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" class="rounded-lg shadow-inner"></iframe>
+                <div id="map" class="hidden mt-6 overflow-hidden rounded-2xl shadow-inner">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.669811400045!2d120.6418857!3d24.1627943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d8a571f28b7%3A0x6b42b93850117173!2z5Y-w5Lit5biC5p2-55qH5a6_!5e0!3m2!1szh-TW!2stw!4v1722086600000!5m2!1szh-TW!2stw" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
@@ -69,13 +82,13 @@
         </div>
     </section>
 
-    <section id="rsvp" class="py-20 bg-[#f4f7f5]">
+    <section id="rsvp" class="py-20 bg-[#dbe2dd]">
         <div class="max-w-2xl mx-auto px-6">
-            <h2 class="text-4xl text-center mb-12 text-[#2d4a3e]">出席回覆</h2>
+            <h2 class="text-4xl text-center mb-12 text-[#1a2e26]">出席回覆</h2>
             <div class="flex justify-center overflow-hidden rounded-2xl shadow-xl">
                 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfDQI1j_SLHjUd1o1M6k_qQeuGAwL4UmK16wpcH4Hdasy2VRg/viewform?embedded=true" width="640" height="2961" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
             </div>
-            <p class="text-center mt-12 text-[#2d4a3e] font-bold text-xl">期閔&琪毓 期待見到您😉</p>
+            <p class="text-center mt-12 text-[#1a2e26] font-bold text-xl">期閔&琪毓 期待見到您😉</p>
         </div>
     </section>
 
@@ -98,12 +111,12 @@
             const container = document.getElementById('timer');
             container.innerHTML = units.map((u, i) => `
                 <div class="flex flex-col items-center">
-                    <div class="timer-card w-14 h-14 md:w-20 md:h-20 flex items-center justify-center text-lg md:text-3xl font-bold text-[#2d4a3e]">
+                    <div class="timer-card w-14 h-14 md:w-20 md:h-20 flex items-center justify-center text-lg md:text-3xl font-bold text-[#1a2e26]">
                         ${String(u.val).padStart(2, '0')}
                     </div>
-                    <span class="mt-2 text-[10px] md:text-xs text-gray-500 font-bold">${u.label}</span>
+                    <span class="mt-2 text-[10px] md:text-xs text-[#1a2e26] font-bold">${u.label}</span>
                 </div>
-                ${i < units.length - 1 ? '<div class="h-10 w-[1px] bg-gray-300 self-center mx-1"></div>' : ''}
+                ${i < units.length - 1 ? '<div class="h-10 w-[1px] bg-[#1a2e26]/30 self-center mx-1"></div>' : ''}
             `).join('');
         }
         setInterval(updateTimer, 1000);
