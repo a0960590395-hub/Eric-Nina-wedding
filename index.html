@@ -3,92 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>期閔 & 琪毓 - Together, We Climb</title>
+    <title>梁期閔Eric & 洪琪毓Nina - Together, We Climb</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Noto Serif TC', serif; }
-        .font-cormorant { font-family: 'Cormorant Garamond', serif; }
+        :root { --forest-green: #2d4a3e; }
+        body { font-family: 'Noto Serif TC', serif; color: #374151; }
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 700; }
         .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); }
-        .whitespace-nowrap { white-space: nowrap; }
+        .no-wrap { white-space: nowrap; }
+        .timer-card { background: white; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border-radius: 12px; }
     </style>
 </head>
-<body class="bg-[#F8F9F7] text-[#2D3A2D]">
+<body class="bg-[#fcfbf9]">
 
-    <nav class="fixed top-0 w-full z-50 glass border-b border-white/20 px-6 py-4 flex justify-between items-center">
-        <div class="font-bold text-lg whitespace-nowrap">期閔&琪毓</div>
-        <div class="space-x-6 text-sm font-bold">
-            <a href="#about"倒數時刻</a>
-            <a href="#info">資訊詳情</a>
-            <a href="#rsvp">出席回函</a>
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/20">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <span class="text-lg font-bold tracking-widest text-[#2d4a3e] no-wrap">梁期閔Eric、洪琪毓Nina</span>
+            <div class="hidden md:flex space-x-8 text-sm font-bold tracking-wider">
+                <a href="#about" class="hover:text-[#2d4a3e]">關於我們</a>
+                <a href="#info" class="hover:text-[#2d4a3e]">資訊詳情</a>
+                <a href="#rsvp" class="hover:text-[#2d4a3e]">出席回覆</a>
+            </div>
         </div>
     </nav>
 
-    <header class="relative h-screen w-full flex flex-col justify-center items-center text-center p-4">
-        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://i.postimg.cc/MGfxPW9J/LINE-ALBUM-hun-sha-260727-2.jpg');">
-            <div class="absolute inset-0 bg-black/30"></div>
-        </div>
-        <div class="relative z-10 text-white max-w-2xl">
-            <h1 class="text-5xl md:text-7xl font-cormorant font-bold mb-6 whitespace-nowrap">Together, We Climb</h1>
-            <p class="text-lg md:text-xl font-bold mb-2">從相遇、同行，到攜手走向未來，每一步都因為彼此而充滿意義。</p>
+    <header id="about" class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://i.postimg.cc/MGfxPW9J/LINE-ALBUM-hun-sha-260727-2.jpg');"></div>
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="relative z-10 text-center text-white px-4">
+            <h1 class="text-5xl md:text-7xl mb-6 font-bold">Together, We Climb</h1>
+            <p class="text-lg md:text-xl font-medium mb-2">從相遇、同行，到攜手走向未來，每一步都因為彼此而充滿意義。</p>
             <p class="text-xl md:text-2xl font-bold">誠摯邀請您，與我們一同見證人生最美好的風景。</p>
         </div>
     </header>
 
-    <section class="py-20 px-6 max-w-4xl mx-auto text-center" id="about">
-        <div id="timer" class="flex justify-center items-center gap-2 md:gap-4 mb-16">
-            <!-- Countdown cards will be injected here via JS -->
+    <section id="info" class="py-20 px-6 max-w-4xl mx-auto">
+        <h2 class="text-3xl text-center mb-12 text-[#2d4a3e]">好久不見，距離見面還有</h2>
+        <div id="timer" class="flex justify-center items-center gap-2 md:gap-4 mb-20">
+            <!-- Timer logic handled by JS -->
         </div>
 
-        <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100">
-            <h2 class="text-3xl font-bold mb-6">加入LINE好友獲取更多當天活動資訊</h2>
-            <a href="https://lin.ee/y1xDtCk" class="inline-block bg-[#2D3A2D] text-white px-8 py-4 rounded-full font-bold hover:bg-[#3D4A3D] transition">立即加入</a>
-        </div>
-    </section>
-
-    <section class="py-20 px-6 bg-[#E8EAE6]" id="info">
-        <div class="max-w-md mx-auto bg-white p-8 rounded-2xl shadow-lg border-t-4 border-[#2D3A2D]">
-            <h3 class="text-2xl font-bold mb-4 whitespace-nowrap">梁期閔 Eric & 洪琪毓 Nina</h3>
-            <p class="mb-4">日期：2026年11月22日 12:00</p>
-            <p class="mb-6">地點：<span class="whitespace-nowrap">台中市林皇宮2F 墨緹絲廳</span></p>
-            
-            <details class="group mt-4">
-                <summary class="cursor-pointer font-bold text-[#2D3A2D] hover:underline">查看交通指引</summary>
-                <div class="mt-4 overflow-hidden rounded-xl border">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.457187979313!2d120.63750007536968!3d24.162799778385624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d93b3333333%3A0x3333333333333333!2z5Y-w5Lit5biC5p6X55qH5a6u!5e0!3m2!1szh-TW!2stw!4v1722080000000" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                    <p class="p-2 text-sm">台中市西屯區臺灣大道三段33號</p>
+        <div class="bg-white p-8 md:p-12 shadow-2xl rounded-2xl border border-gray-100">
+            <div class="space-y-6 text-center">
+                <h3 class="text-4xl text-[#2d4a3e]">活動資訊</h3>
+                <p class="text-lg">日期：<span class="no-wrap">2026年11月22日 (六)</span></p>
+                <p class="text-lg">時間：<span class="no-wrap">12:00 (建議 11:30 前抵達)</span></p>
+                <p class="text-lg">地點：<span class="no-wrap">台中市林皇宮2F 墨緹絲廳</span></p>
+                <p class="text-md text-gray-500"><span class="no-wrap">台中市西屯區臺灣大道三段33號</span></p>
+                
+                <button onclick="document.getElementById('map').classList.toggle('hidden')" class="mt-8 px-8 py-3 bg-[#2d4a3e] text-white rounded-full hover:bg-[#3d6353] transition shadow-lg">
+                    檢視交通指引
+                </button>
+                <div id="map" class="hidden mt-6">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.669811400045!2d120.6418857!3d24.1627943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d8a571f28b7%3A0x6b42b93850117173!2z5Y-w5Lit5biC5p2-55qH5a6_!5e0!3m2!1szh-TW!2stw!4v1722086600000!5m2!1szh-TW!2stw" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" class="rounded-lg shadow-inner"></iframe>
                 </div>
-            </details>
+            </div>
+        </div>
+
+        <div class="mt-16 text-center">
+            <a href="https://lin.ee/y1xDtCk" class="inline-block p-6 bg-[#06c755] text-white rounded-2xl hover:scale-105 transition duration-300 shadow-lg">
+                <h4 class="font-bold text-xl m-0">加入line好友獲取更多當天活動資訊</h4>
+            </a>
         </div>
     </section>
 
-    <section class="py-20 px-6 max-w-2xl mx-auto" id="rsvp">
-        <h2 class="text-3xl font-bold text-center mb-10">出席回函</h2>
-        <div class="flex justify-center w-full">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfDQI1j_SLHjUd1o1M6k_qQeuGAwL4UmK16wpcH4Hdasy2VRg/viewform?embedded=true" width="640" height="1200" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
+    <section id="rsvp" class="py-20 bg-gray-100">
+        <div class="max-w-2xl mx-auto px-6">
+            <h2 class="text-4xl text-center mb-12 text-[#2d4a3e]">出席回覆</h2>
+            <div class="flex justify-center overflow-hidden rounded-2xl shadow-xl">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfDQI1j_SLHjUd1o1M6k_qQeuGAwL4UmK16wpcH4Hdasy2VRg/viewform?embedded=true" width="640" height="2961" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
+            </div>
+            <p class="text-center mt-12 text-[#2d4a3e] font-bold text-xl">期閔&琪毓 期待見到您😉</p>
         </div>
     </section>
 
     <script>
         function updateTimer() {
-            const target = new Date("2026-11-22T12:00:00").getTime();
-            const now = new Date().getTime();
+            const target = new Date('2026-11-22T12:00:00');
+            const now = new Date();
             const diff = target - now;
             
-            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const s = Math.floor((diff % (1000 * 60)) / 1000);
+            if (diff <= 0) return;
 
-            const timerDiv = document.getElementById('timer');
-            timerDiv.innerHTML = [
-                { val: d, label: '天' }, { val: h, label: '時' }, { val: m, label: '分' }, { val: s, label: '秒' }
-            ].map(item => `
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const secs = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            const units = [
+                { val: days, label: '天' },
+                { val: hours, label: '時' },
+                { val: mins, label: '分' },
+                { val: secs, label: '秒' }
+            ];
+
+            const container = document.getElementById('timer');
+            container.innerHTML = units.map((u, i) => `
                 <div class="flex flex-col items-center">
-                    <div class="bg-white p-4 rounded-xl shadow-lg border border-gray-100 min-w-[60px] text-2xl font-bold">${item.val}</div>
-                    <span class="text-xs mt-2 font-bold">${item.label}</span>
+                    <div class="timer-card w-16 h-16 md:w-20 md:h-20 flex items-center justify-center text-xl md:text-3xl font-bold text-[#2d4a3e]">
+                        ${String(u.val).padStart(2, '0')}
+                    </div>
+                    <span class="mt-2 text-xs text-gray-500 font-bold">${u.label}</span>
                 </div>
-            `).join('<div class="h-8 w-px bg-gray-300 mx-1"></div>');
+                ${i < units.length - 1 ? '<div class="h-12 w-[1px] bg-gray-300 self-center"></div>' : ''}
+            `).join('');
         }
         setInterval(updateTimer, 1000);
         updateTimer();
