@@ -3,44 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>梁期閔Eric & 洪琪毓Nina - Together, We Climb</title>
+    <title>梁期閔Eric & 洪琪毓Nina</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --forest-green: #2d4a3e; }
-        body { font-family: 'Noto Serif TC', serif; color: #374151; overflow-x: hidden; }
+        body { font-family: 'Noto Serif TC', serif; color: #374151; background-color: #fcfbf9; margin: 0; padding: 0; }
         h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 700; }
-        .glass { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); }
         .timer-card { background: white; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 12px; }
-        .prevent-break { white-space: nowrap; }
-        @media (max-width: 640px) { 
-            .mobile-fix { line-height: 1.5; word-break: keep-all; }
-            .hero-text-container { padding-bottom: 2rem; }
+        .prevent-break { white-space: nowrap; display: inline-block; }
+        .hero-section { height: 90vh; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; padding-bottom: 6rem; position: relative; }
+        .hero-bg { 
+            background-image: url('https://i.postimg.cc/MGfxPW9J/LINE-ALBUM-hun-sha-260727-2.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            width: 90%; 
+            height: 90%; 
+            border-radius: 2rem;
+            margin: 0 auto;
         }
     </style>
 </head>
-<body class="bg-[#fcfbf9]">
+<body>
 
-    <nav class="fixed top-0 w-full z-50 glass border-b border-white/20">
-        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-            <span class="text-sm md:text-lg font-bold tracking-widest text-[#2d4a3e] prevent-break">梁期閔Eric、洪琪毓Nina</span>
-            <div class="flex space-x-4 md:space-x-8 text-[12px] md:text-sm font-bold tracking-wider">
-                <a href="#about" class="hover:text-[#2d4a3e]">關於我們</a>
-                <a href="#info" class="hover:text-[#2d4a3e]">資訊詳情</a>
-                <a href="#rsvp" class="hover:text-[#2d4a3e]">出席回覆</a>
-            </div>
-        </div>
-    </nav>
-
-    <header id="about" class="relative h-screen w-full flex items-end justify-center pb-20 overflow-hidden">
-        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://i.postimg.cc/MGfxPW9J/LINE-ALBUM-hun-sha-260727-2.jpg'); background-position: 50% 30%;"></div>
-        <div class="absolute inset-0 bg-black/30"></div>
-        <div class="relative z-10 text-center text-white px-4 hero-text-container">
-            <h1 class="text-4xl md:text-6xl mb-6 font-bold prevent-break">Together, We Climb</h1>
-            <div class="text-sm md:text-lg font-medium space-y-1">
-                <p class="prevent-break">從相遇、同行，到攜手走向未來。</p>
-                <p class="font-bold prevent-break">每一步都因為彼此而充滿意義。</p>
-                <p class="font-bold prevent-break">誠摯邀請您，與我們一同見證人生最美好的風景。</p>
+    <header id="about" class="hero-section w-full">
+        <div class="hero-bg relative shadow-2xl overflow-hidden">
+            <div class="absolute inset-0 bg-black/20"></div>
+            <div class="absolute inset-0 flex flex-col justify-end items-center pb-12 px-4 text-center text-white">
+                <h1 class="text-4xl md:text-6xl mb-6 font-bold prevent-break">Together, We Climb</h1>
+                <div class="text-md md:text-xl font-medium space-y-1">
+                    <p class="prevent-break">從相遇、同行，到攜手走向未來。</p>
+                    <p class="font-bold prevent-break">每一步都因為彼此而充滿意義。</p>
+                    <p class="font-bold prevent-break">誠摯邀請您，與我們一同見證人生最美好的風景。</p>
+                </div>
             </div>
         </div>
     </header>
@@ -88,21 +82,17 @@
             const target = new Date('2026-11-22T12:00:00');
             const now = new Date();
             const diff = target - now;
-            
             if (diff <= 0) return;
-
             const days = Math.floor(diff / (1000 * 60 * 60 * 24));
             const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             const secs = Math.floor((diff % (1000 * 60)) / 1000);
-            
             const units = [
                 { val: days, label: '天' },
                 { val: hours, label: '時' },
                 { val: mins, label: '分' },
                 { val: secs, label: '秒' }
             ];
-
             const container = document.getElementById('timer');
             container.innerHTML = units.map((u, i) => `
                 <div class="flex flex-col items-center">
