@@ -10,11 +10,13 @@
         :root { --forest-green: #2d4a3e; }
         body { font-family: 'Noto Serif TC', serif; color: #374151; overflow-x: hidden; }
         h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 700; }
-        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); }
+        .glass { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); }
         .timer-card { background: white; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 12px; }
         .prevent-break { white-space: nowrap; }
-        /* 確保手機文字縮放比例適中 */
-        @media (max-width: 640px) { .responsive-text { font-size: 0.9rem; } }
+        @media (max-width: 640px) { 
+            .mobile-fix { line-height: 1.5; word-break: keep-all; }
+            .hero-text-container { padding-bottom: 2rem; }
+        }
     </style>
 </head>
 <body class="bg-[#fcfbf9]">
@@ -30,14 +32,15 @@
         </div>
     </nav>
 
-    <header id="about" class="relative h-screen w-full flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://i.postimg.cc/MGfxPW9J/LINE-ALBUM-hun-sha-260727-2.jpg');"></div>
-        <div class="absolute inset-0 bg-black/40"></div>
-        <div class="relative z-10 text-center text-white px-4 flex flex-col items-center">
-            <h1 class="text-5xl md:text-7xl mb-8 font-bold prevent-break leading-tight">Together, We Climb</h1>
-            <div class="text-sm md:text-xl font-medium space-y-3 px-2">
-                <p class="prevent-break">從相遇、同行，到攜手走向未來，每一步都因為彼此而充滿意義。</p>
-                <p class="text-lg md:text-2xl font-bold prevent-break">誠摯邀請您，與我們一同見證人生最美好的風景。</p>
+    <header id="about" class="relative h-screen w-full flex items-end justify-center pb-20 overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://i.postimg.cc/MGfxPW9J/LINE-ALBUM-hun-sha-260727-2.jpg'); background-position: 50% 30%;"></div>
+        <div class="absolute inset-0 bg-black/30"></div>
+        <div class="relative z-10 text-center text-white px-4 hero-text-container">
+            <h1 class="text-4xl md:text-6xl mb-6 font-bold prevent-break">Together, We Climb</h1>
+            <div class="text-sm md:text-lg font-medium space-y-1">
+                <p class="prevent-break">從相遇、同行，到攜手走向未來。</p>
+                <p class="font-bold prevent-break">每一步都因為彼此而充滿意義。</p>
+                <p class="font-bold prevent-break">誠摯邀請您，與我們一同見證人生最美好的風景。</p>
             </div>
         </div>
     </header>
