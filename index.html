@@ -97,30 +97,14 @@
             </p>
            
         </div>    
-    .scroll-hint {
-    position: absolute;
-    bottom: 32px;
-    left: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    color: var(--text-light);
-    font-size: .75rem;
-    letter-spacing: 2px;
-    opacity: 0;
-    animation: fadeUp .8s ease-out 1.4s forwards;
-      }
-
-    .scroll-hint .arrow {
-    width: 20px; 
-    height: 20px;
-    border-right: 1.5px solid var(--primary-light);
-    border-bottom: 1.5px solid var(--primary-light);
-    transform: rotate(45deg);
-    animation: bounce 2s infinite;
-    }
+   <div class="scroll-hint">
+    <span>向下滑動</span>
+    <div class="arrow"></div>
+  </div>
+    <div class="arrow-container">
+    <span class="text-sm tracking-widest opacity-70">SCROLL</span>
+    <div class="arrow"></div>
+</div>
     <section id="info" class="py-20 px-6 max-w-4xl mx-auto">
         <h2 class="text-3xl text-center mb-12 text-[#1a2e26]">好久不見，距離見面還有</h2>
         <div id="timer" class="flex justify-center items-center gap-2 md:gap-4 mb-20"></div>
