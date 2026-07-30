@@ -1,86 +1,203 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-TW" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Together, We Climb</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            margin: 0;
-            font-family: "Noto Sans TC", Arial, sans-serif;
-            background-color: #f5f5f5;
+        /* 統一全站字型設定 */
+         body {
+            font-family: 'Noto Serif TC', serif;
+            background-color: #F8FAF9;
+            color: #1a2e26;
         }
 
-        .container {
-            max-width: 600px;
-            margin: auto;
-            background-color: #ffffff;
+        h1, h2, h3, .font-eng {
+            font-family: 'Cormorant Garamond', 'Noto Serif TC', serif;
         }
 
-        .header {
-            text-align: center;
-            padding: 20px;
-            font-size: 24px;
-            font-weight: bold;
+   
+        .nav-blur {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background-color: rgba(248, 250, 249, 0.85);
+            border-bottom: 1px solid rgba(45, 74, 62, 0.1);
         }
-
-        .subtitle {
-            text-align: center;
-            padding: 10px 20px;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        .names {
-            text-align: center;
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-
-        .image {
+        
+        .hero-section {
             width: 100%;
+            height: 100vh;
+            background-color: rgba(107, 142, 35, 0.1);
+            background-image: url('https://i.postimg.cc/X7SWcgLL/IMG-1267.jpg');
+            background-size: contain;
+            background-position: center;
+            position: relative;
+            background-repeat: no-repeat;
         }
 
-        .image img {
-            width: 100%;
-            height: auto;
-            display: block;
+        @media (max-width: 768px) {
+            .hero-section {
+                width: 100vw;
+                height: 100vh;
+                background-color: rgba(107, 142, 35, 0.1);
+                background-image: url('https://i.postimg.cc/X7SWcgLL/IMG-1267.jpg');
+                background-size: contain;
+                background-position: center;
+                position: relative;
+                background-repeat: no-repeat;
+            }
+        }
+        
+        .arrow-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            margin-top: 2rem;
+            color: #A39686;
         }
 
-        .footer {
-            text-align: center;
-            padding: 15px;
-            color: #888;
-            font-size: 12px;
+        .arrow {
+            width: 20px;
+            height: 10px;
+            border-left: 1px solid #A39686;
+            border-bottom: 1px solid #A39686;
+            transform: rotate(-45deg);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) rotate(-45deg); }
+            40% { transform: translateY(-10px) rotate(-45deg); }
+            60% { transform: translateY(-5px) rotate(-45deg); }
+        }
+
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(45, 74, 62, 0.2), rgba(45, 74, 62, 0.4));
+        }
+
+        .timer-card { 
+            background: #ffffff; 
+            box-shadow: 0 4px 15px rgba(45, 74, 62, 0.1); 
+            border-radius: 8px; 
+            border: 1px solid #E2E8E4; 
+        }
+         /* ✅ 文字緊密 */
+        .tight-text {
+            line-height: 1.4;
+            letter-spacing: 0.05em;
+        }
+
+        .tight-title {
+            line-height: 1.2;
+            letter-spacing: 0.06em;
+        }
+
+        .tight-sub {
+            line-height: 1.3;
+        }
+        .prevent-break { 
+            white-space: nowrap; 
+            display: inline-block; 
         }
     </style>
 </head>
 <body>
 
-<div class="container">
+    <nav class="fixed top-0 w-full z-50 px-6 py-4 nav-blur">
+        <span class="font-bold text-[#1a2e26] text-lg tracking-wider">Together, We Climb</span>
+    </nav>
 
-    <div class="header">
-        Together, We Climb
+    <header class="hero-section flex items-start justify-center text-white pt-12">
+        <div class="relative z-10 bg-gradient-to-t from-white/75 via-white/55 to-transparent max-w-xl w-full p-8 sm:p-12 text-center rounded-t-2xl">
+            <p class="hero-text-tight text-stone-800 text-sm sm:text-lg font-semibold mb-4">
+
+                從相遇、相知，到同行走向未來<br>每一步都因為彼此而充滿意義
+            </p>
+
+            <h1 class="hero-title-tight text-xl sm:text-2xl font-bold text-stone-900 my-1 font-eng">
+                梁期閔 Eric &amp; 洪琪毓 Nina
+            </h1>
+
+            <p class="hero-sub-tight text-sm sm:text-lg font-semibold mt-2">
+                期待，在這天與您相聚
+            </p>
+        </div>
+    </header>
+
+    <div class="flex flex-col items-center justify-center w-full gap-3 my-12">
+        <span class="text-[#2D4A3E] opacity-60 tracking-widest text-xs">SCROLL</span>
+        <div class="arrow-v"></div>
     </div>
 
-    <div class="subtitle">
-        在這條路上，我們彼此扶持、一起成長<br>
-        迎向每一個挑戰與未來
-    </div>
+    <section id="info" class="py-20 px-6 max-w-4xl mx-auto">
+        <h2 class="text-3xl text-center mb-12 text-[#1a2e26]">好久不見，距離見面還有</h2>
+        <div id="timer" class="flex justify-center items-center gap-2 md:gap-4 mb-20"></div>
+             
+        <div class="bg-white p-8 md:p-12 shadow-xl rounded-3xl border border-[#1a2e26]/10">
+            <div class="space-y-6 text-center text-[#1a2e26]">
+                <h3 class="text-4xl">資訊詳情</h3>
+                <p class="text-lg">日期：<span class="prevent-break">2026年11月22日 (日)</span></p>
+                <p class="text-lg">時間：<span class="prevent-break">12:00 (建議 11:30 前抵達)</span></p>
+                <p class="text-lg">地點：<span class="prevent-break">台中市林皇宮2F 墨緹絲廳</span></p>
+                <p class="text-md text-[#1a2e26]/70"><span class="prevent-break">台中市西屯區臺灣大道三段33號</span></p>
+                
+                <button onclick="document.getElementById('map').classList.toggle('hidden')" class="mt-8 px-8 py-3 bg-[#1a2e26] text-white rounded-full hover:bg-[#2d4a3e] transition shadow-lg">
+                    檢視交通指引
+                </button>
+                <div id="map" class="hidden mt-6 overflow-hidden rounded-2xl shadow-inner">
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.2589769120736!2d120.64580440869068!3d24.162648672739145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d8c2f21172f%3A0xc5fa8741cb3c07d7!2z5Y-w5Lit5p6X55qH5a6u!5e0!3m2!1szh-TW!2stw!4v1785170815454!5m2!1szh-TW!2stw" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>                </div>
+            </div>
+        </div>
 
-    <div class="names">
-        榮開國 Eric & 洪琪娟 Nina
-    </div>
+        <div class="mt-16 text-center">
+            <a href="https://lin.ee/y1xDtCk" class="inline-block p-6 bg-[#06c755] text-white rounded-2xl hover:scale-105 transition duration-300 shadow-lg">
+                <h4 class="font-bold text-lg md:text-xl m-0">加入line好友獲取當天活動資訊</h4>
+            </a>
+        </div>
+    </section>
 
-    <div class="image">
-        <!-- 請把圖片檔案名稱換成你的 -->
-        <img src="https://i.postimg.cc/X7SWcgLL/IMG-1267.jpg" alt="Together Photo">
-    </div>
+    <section id="rsvp" class="py-20 bg-[#dbe2dd]">
+        <div class="max-w-2xl mx-auto px-6">
+            <h2 class="text-4xl text-center mb-12 text-[#1a2e26]">出席回覆</h2>
+            <div class="flex justify-center overflow-hidden rounded-2xl shadow-xl">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfDQI1j_SLHjUd1o1M6k_qQeuGAwL4UmK16wpcH4Hdasy2VRg/viewform?embedded=true" width="640" height="2961" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
+            </div>
+            <p class="text-center mt-12 text-[#1a2e26] font-bold text-xl">期閔&琪毓 期待見到您😉</p>
+        </div>
+    </section>
 
-    <div class="footer">
-        © 2026
-    </div>
-
-</div>
-
+    <script>
+        function updateTimer() {
+            const target = new Date('2026-11-22T12:00:00');
+            const now = new Date();
+            const diff = target - now;
+            if (diff <= 0) return;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const secs = Math.floor((diff % (1000 * 60)) / 1000);
+            const units = [
+                { val: days, label: '天' },
+                { val: hours, label: '時' },
+                { val: mins, label: '分' },
+                { val: secs, label: '秒' }
+            ];
+            const container = document.getElementById('timer');
+            container.innerHTML = units.map((u, i) => `
+                <div class="flex flex-col items-center">
+                    <div class="timer-card w-14 h-14 md:w-20 md:h-20 flex items-center justify-center text-lg md:text-3xl font-bold text-[#1a2e26]">
+                        ${String(u.val).padStart(2, '0')}
+                    </div>
+                    <span class="mt-2 text-[10px] md:text-xs text-[#1a2e26] font-bold">${u.label}</span>
+                </div>
+                ${i < units.length - 1 ? '<div class="h-10 w-[1px] bg-[#1a2e26]/30 self-center mx-1"></div>' : ''}
+            `).join('');
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
 </body>
 </html>
